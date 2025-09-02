@@ -1,24 +1,26 @@
 import logo from './logo.svg';
-import './App.css';
+import IntroPage from './section/Intro';
+import AboutMePage from './section/AboutMe';
+import ProjectPage from './section/Project';
+import FinishPage from './section/contact/Finish';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React, {useRef} from 'react';
 
 function App() {
+  const sectionRef = useRef();
+  
+  const onChangePageScroll =()=>{
+    sectionRef.current.scrollIntoView({ behavior: 'smooth'})
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+   <IntroPage onBtnClick={onChangePageScroll}></IntroPage>
+   <AboutMePage sectionRef = {sectionRef}></AboutMePage>
+    <ProjectPage></ProjectPage>
+    <FinishPage></FinishPage>
+   </>
   );
 }
 

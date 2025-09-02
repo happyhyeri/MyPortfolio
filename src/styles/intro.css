@@ -1,0 +1,130 @@
+@import url(https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css);
+* {
+  box-sizing: border-box;
+}
+.intro-container {
+  background: #f5ecd5;
+  display: flex;
+  height: 100vh; /*브라우저 높이 100%*/
+  width: 100%; /*화면 전체 너비*/
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'NanumSquareRoundBold';
+}
+.intro-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.intro-text {
+  font-size: 50px;
+  margin-bottom: 30px; /* 버튼과 간격 */
+  color: #626f47;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.intro-text-highlight {
+  font-size: 65px;
+  color: #3c442c;
+}
+
+#about-btn {
+  font-size: 25px;
+  padding: 10px;
+  font-weight: bold;
+  border-color: #626f47 !important;
+  color: #626f47 !important;
+}
+
+#about-btn:hover {
+  font-size: 25px;
+  padding: 10px;
+  font-weight: bold;
+  border-color: #626f47 !important;
+  color: #f5ecd5 !important;
+  background-color: #626f47;
+}
+* {
+  box-sizing: border-box;
+}
+
+.intro-container {
+  background: #f5ecd5;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'NanumSquareRoundBold';
+  padding: 0 20px; /* 모바일에서 좌우 여백 */
+}
+
+.intro-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center; /* 모바일에서 중앙 정렬 */
+}
+
+.intro-text {
+  font-size: 50px;
+  margin-bottom: 30px;
+  color: #626f47;
+  font-weight: 700;
+}
+
+.intro-text-highlight {
+  font-size: 65px;
+  color: #3c442c;
+}
+
+#about-btn {
+  font-size: 25px;
+  padding: 10px 20px;
+  font-weight: bold;
+  border: 2px solid #626f47;
+  color: #626f47;
+  background: none;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+#about-btn:hover {
+  color: #f5ecd5;
+  background-color: #626f47;
+}
+
+@media screen and (max-width: 1600px) {
+  .intro-text {
+    font-size: 30px;
+  }
+
+  .intro-text-highlight {
+    font-size: 45px;
+  }
+
+  #about-btn {
+    font-size: 25px;
+    padding: 2px 10px;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .intro-text {
+    font-size: 20px;
+  }
+
+  .intro-text-highlight {
+    font-size: 30px;
+  }
+
+  #about-btn {
+    font-size: 18px;
+    padding: 4px 8px;
+  }
+}
+
+
