@@ -7,7 +7,8 @@ export default function IntroPage({ onBtnClick }) {
       <div className="intro-container">
         <div className="intro-body">
           <p className="intro-text">
-            안녕하세요, 풀스택 개발자가 되고 싶은 <br />
+            안녕하세요, 풀스택 개발자가 되고 싶은 
+            <br />
             <span className="intro-text-highlight">' 달팽이 이혜리 '</span>{' '}
             입니다. 🐌
           </p>

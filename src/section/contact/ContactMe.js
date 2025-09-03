@@ -27,7 +27,7 @@ export default function ContactSection() {
                 <span style={{ padding: '10px' }}>{hyeriEmail}</span>
                 <span
                   id="custom-badge"
-                  class="badge rounded-pill text-bg-secondary"
+                  className="badge rounded-pill text-bg-secondary"
                   onClick={copyEmail}
                 >
                   copy

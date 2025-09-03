@@ -46,56 +46,6 @@
   color: #f5ecd5 !important;
   background-color: #626f47;
 }
-* {
-  box-sizing: border-box;
-}
-
-.intro-container {
-  background: #f5ecd5;
-  display: flex;
-  height: 100vh;
-  width: 100%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-family: 'NanumSquareRoundBold';
-  padding: 0 20px; /* 모바일에서 좌우 여백 */
-}
-
-.intro-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  text-align: center; /* 모바일에서 중앙 정렬 */
-}
-
-.intro-text {
-  font-size: 50px;
-  margin-bottom: 30px;
-  color: #626f47;
-  font-weight: 700;
-}
-
-.intro-text-highlight {
-  font-size: 65px;
-  color: #3c442c;
-}
-
-#about-btn {
-  font-size: 25px;
-  padding: 10px 20px;
-  font-weight: bold;
-  border: 2px solid #626f47;
-  color: #626f47;
-  background: none;
-  cursor: pointer;
-  border-radius: 8px;
-}
-
-#about-btn:hover {
-  color: #f5ecd5;
-  background-color: #626f47;
-}
 
 @media screen and (max-width: 1600px) {
   .intro-text {

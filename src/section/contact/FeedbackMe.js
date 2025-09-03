@@ -93,7 +93,6 @@ export default function FeedbackSection() {
             onDeleteFeedback={onDeleteFeedback}
             feedbackList={feedbacks}
           ></FeedbackMainSection>
-  
         </div>
       </div>
     </div>
@@ -191,7 +190,7 @@ function FeedbackInputSection(props) {
         ></ConfirmModal>
       )}
       <input
-        class="form-control"
+        className="form-control"
         type="text"
         placeholder="Nickname"
         value={nickname}
@@ -199,7 +198,7 @@ function FeedbackInputSection(props) {
         style={{ ...inputStyle }}
       ></input>
       <textarea
-        class="form-control gap-2 "
+        className="form-control gap-2 "
         rows="6"
         style={inputStyle}
         value={content}
@@ -215,7 +214,7 @@ function FeedbackInputSection(props) {
           }}
         >
           <input
-            class="form-control "
+            className="form-control "
             type={showEyeIcon ? 'text' : 'password'}
             placeholder="Password"
             value={password}
@@ -231,7 +230,7 @@ function FeedbackInputSection(props) {
 
         <button
           type="submit"
-          class="btn btn-light"
+          className="btn btn-light"
           id="ok-btn"
           style={{
             height: inputHeight,
@@ -257,8 +256,9 @@ function FeedbackMainSection(props) {
     <>
       {[...list]
         .sort((a, b) => new Date(b.date) - new Date(a.date))
-        .map((item) => (
+        .map((item, index) => (
           <FeedbackCard
+            key={index}
             onDeleteFeedback={props.onDeleteFeedback}
             feedbackItem={item}
           ></FeedbackCard>
@@ -383,7 +383,7 @@ function CardHeader(props) {
         <div>
           <button
             type="button"
-            class="btn btn-secondary"
+            className="btn btn-secondary"
             id="feedback-btn"
             style={{ marginRight: '15px' }}
             onClick={onEditBtnClick}
@@ -393,7 +393,7 @@ function CardHeader(props) {
 
           <button
             type="button"
-            class="btn btn-secondary"
+            className="btn btn-secondary"
             id="feedback-btn"
             onClick={onDeleteBtnClick}
           >
@@ -404,8 +404,6 @@ function CardHeader(props) {
     </>
   );
 }
-
-
 
 function nowTime() {
   const now = new Date();

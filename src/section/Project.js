@@ -81,8 +81,9 @@ function PreviewSection() {
         id="preview-img-container"
         style={{ paddingBottom: '10px', lineHeight: '1.6' }}
       >
-        {previewImgs.map((item) => (
+        {previewImgs.map((item,index) => (
           <PrevieImgTitleSection
+            key = {index}
             title={item.title}
             imgSrc={item.img}
           ></PrevieImgTitleSection>
@@ -113,7 +114,8 @@ function IssueSection() {
       <hr />
 
       <h4>🤔 만들면서 했던 고민</h4>
-      <p style={{ paddingBottom: '10px', lineHeight: '1.6' }}>
+      <div style={{ paddingBottom: '10px', lineHeight: '1.6' }}>
+      
         <ul>
           <li className="higtlight-text">
             반복되는 UI 코드의 재사용 방법 (Composable 구조화 고민)
@@ -159,9 +161,9 @@ function IssueSection() {
             </ul>
           </ul>
         </ul>
-      </p>
+      </div>
       <h4>🤔 프로젝트 진행시 겪었던 어려움</h4>
-      <p style={{ paddingBottom: '10px', lineHeight: '1.8' }}>
+      <div style={{ paddingBottom: '10px', lineHeight: '1.8' }}>
         <ul>
           <li className="higtlight-text">
             상세 주문 화면 : 옵션 선택 시 가격 증가 문제
@@ -179,7 +181,7 @@ function IssueSection() {
           </li>
           <DefficultyTable2></DefficultyTable2>
         </ul>
-      </p>
+      </div>
     </>
   );
 }
@@ -237,7 +239,7 @@ function AboutSection() {
 }
 function DefficultyTable1() {
   return (
-    <table class="table">
+    <table className="table">
       <tbody>
         <tr>
           <th scope="row" style={{ width: '90px' }}>
@@ -288,7 +290,7 @@ function DefficultyTable1() {
 
 function DefficultyTable2() {
   return (
-    <table class="table">
+    <table className="table">
       <tbody>
         <tr>
           <th scope="row" style={{ width: '90px' }}>
@@ -329,7 +331,7 @@ function DefficultyTable2() {
 }
 function ImplementationFunctionTable() {
   return (
-    <table class="table">
+    <table className="table">
       <thead>
         <tr>
           <th scope="col">기능</th>

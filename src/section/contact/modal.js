@@ -29,7 +29,7 @@ export function AlertModal(props) {
         <div className="modal-buttons">
           <button
             type="button"
-            class="btn btn-secondary"
+            className="btn btn-secondary"
             id="feedback-btn"
             style={{ width: '90%', height: '50px' }}
             onClick={() => {
@@ -95,7 +95,7 @@ export function PasswordCheckModal(props) {
           }}
         >
           <input
-            class="form-control "
+            className="form-control "
             type={showEyeIcon ? 'text' : 'password'}
             placeholder="Password"
             value={password}
@@ -126,7 +126,7 @@ export function PasswordCheckModal(props) {
         <div className="modal-buttons">
           <button
             type="button"
-            class="btn btn-secondary"
+            className="btn btn-secondary"
             id="feedback-btn"
             style={{ width: '120px', height: '50px' }}
             onClick={() => {
@@ -137,7 +137,7 @@ export function PasswordCheckModal(props) {
           </button>
           <button
             type="button"
-            class="btn btn-secondary"
+            className="btn btn-secondary"
             id="feedback-btn"
             style={{ width: '120px', height: '50px' }}
             onClick={props.onCancel}
@@ -176,7 +176,7 @@ export function ConfirmModal({ message, onConfirm, onCancel }) {
         <div className="modal-buttons" style={{}}>
           <button
             type="button"
-            class="btn btn-secondary"
+            className="btn btn-secondary"
             id="feedback-btn"
             style={{ width: '120px', height: '50px' }}
             onClick={onConfirm}
@@ -185,7 +185,7 @@ export function ConfirmModal({ message, onConfirm, onCancel }) {
           </button>
           <button
             type="button"
-            class="btn btn-secondary"
+            className="btn btn-secondary"
             id="feedback-btn"
             style={{ width: '120px', height: '50px' }}
             onClick={onCancel}

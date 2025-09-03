@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import IntroPage from './section/Intro';
 import AboutMePage from './section/AboutMe';
 import ProjectPage from './section/Project';
