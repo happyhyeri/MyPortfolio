@@ -26,18 +26,29 @@ function AboutMe() {
       </div>
 
       <div className="about-text">
-        <span className="about-text-highlight">새로운 것에 대한 두려움</span>을
-        <span className="about-text-highlight"> 배움의 즐거움 </span>으로 하나씩
-        넘어온 1년차 개발자 입니다.
-        <br />
+        <span>
+          <span className="about-text-highlight">새로운 것에 대한 두려움</span>
+          을
+        </span>
+        <span>
+          <span className="about-text-highlight"> 배움의 즐거움 </span>으로
+          하나씩 넘어온 1년차 개발자 입니다.
+        </span>
+        <br className='space'/>
+        <span>
         느리더라도 한 걸음씩, 그{' '}
-        <span className="about-text-highlight">배움의 흔적</span> 위에
+        <span className="about-text-highlight">배움의 흔적</span> 위에 </span>
+        <span>
         <span className="about-text-highlight"> 성장의 껍질</span>을 쌓아가고
         있습니다.
-        <br />
-        배우는 것을 좋아하고 다양한 기술 경험을 통해{' '}
+        </span>
+       <br className='space'/>
+        <span>
+        배우는 것을 좋아하고 다양한 기술 경험을 통해{' '}</span>
+        <span>
         <span className="about-text-highlight">' 튼튼한 집 '</span>을 만들고
         싶습니다.
+        </span>
       </div>
     </>
   );
@@ -53,10 +64,15 @@ function AboutMeDetail() {
           <p>전남대학교 신문방송학과</p>
 
           <h5>교육</h5>
-          <p>한국경영원 인재개발원 - 2023.09 ~ 2024.03</p>
+          <p style={{ display: 'flex' }}>
+            한국경영원 인재개발원{' '}
+            <span className="date">- 2023.09 ~ 2024.03</span>
+          </p>
 
           <h5>경력 (1년 4개월)</h5>
-          <p>씨에스캠(주) - 2024.04 ~ 2025.07</p>
+          <p style={{ display: 'flex' }}>
+            씨에스캠(주) <span className="date">- 2024.04 ~ 2025.07</span>
+          </p>
         </div>
       </div>
 

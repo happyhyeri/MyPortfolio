@@ -5,9 +5,9 @@
 .about-container {
   background: #626f47;
   display: flex;
-  height: 100vh; /*브라우저 높이 100%*/
-  width: 100%; /* 100vw 대신 100% */
-  padding: 0; /* 좌우 패딩 최소화 */
+  height: 100vh;
+  width: 100%;
+  padding: 0;
   flex-direction: column;
   justify-content: start;
   align-items: center;
@@ -60,7 +60,7 @@
   font-style: normal;
 }
 .about-item2 {
-  display: grid;
+  display: flex;
   border-radius: 15px;
   background-color: #e8e9e6;
   width: 70%;
@@ -69,18 +69,16 @@
   color: #3c442c;
   font-weight: 700;
   padding: 20px;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas: 'history qualifications skills';
 }
 .personal-history {
-  grid-area: history;
+  flex: 1;
 }
 .qualification {
-  grid-area: qualifications;
+  flex: 1;
 }
 .skills {
-  grid-area: skills;
-  overflow-y: auto; /* 세로 스크롤 활성화 */
+  flex: 1;
+  overflow-y: auto;
 }
 
 .h3 {
@@ -105,3 +103,144 @@
   display: block;
 }
 
+@media screen and (min-width: 1090px) and (max-width: 1550px) {
+  /* AboutMe */
+  .about-me-title {
+    font-size: 2rem;
+  }
+  .about-text {
+    font-size: 1.1rem;
+  }
+  .about-text-highlight {
+    font-size: 1.3rem;
+  }
+  .about-img {
+    width: 150px;
+    height: 150px;
+  }
+  .about-item1,
+  .about-item2 {
+    width: 80%;
+  }
+
+  /*AboutMeDetail*/
+  .personal-history > h4,
+  .qualification > h4,
+  .skills > h4 {
+    font-size: 1.3rem;
+  }
+  .contents > h5 {
+    font-size: 1.1rem;
+  }
+
+  .contents > ul > li,
+  .contents > p {
+    font-size: 1rem;
+  }
+  .date {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1090px) {
+  /* AboutMe */
+  .about-me-title {
+    font-size: 1.5rem;
+  }
+  .about-text {
+    font-size: 1.1rem;
+  }
+  .about-text-highlight {
+    font-size: 1.2rem;
+  }
+  .about-img {
+    width: 130px;
+    height: 130px;
+  }
+  .about-item1 {
+    display: block;
+    text-align: center;
+  }
+  .about-item1,
+  .about-item2 {
+    width: 88%;
+  }
+
+  /*AboutMeDetail*/
+  .personal-history > h4,
+  .qualification > h4,
+  .skills > h4 {
+    font-size: 1.2rem;
+  }
+  .contents > h5 {
+    font-size: 1rem;
+  }
+
+  .contents > ul > li,
+  .contents > p {
+    font-size: 0.9rem;
+  }
+  .date,
+  .about-img,
+  .about-image {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  /* AboutMe */
+  .about-me-title {
+    font-size: 1.3rem;
+  }
+  .about-text {
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .space {
+    display: none;
+  }
+  .about-text-highlight {
+    font-size: 0.9rem;
+  }
+  .about-img {
+    width: 130px;
+    height: 130px;
+  }
+  .about-item1 {
+    padding-bottom: 30px;
+  }
+
+  .about-item1,
+  .about-item2 {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /*AboutMeDetail*/
+  .about-item2 {
+    overflow-y: auto;
+  }
+  .skills {
+    overflow-y: visible;
+  }
+
+  .personal-history > h4,
+  .qualification > h4,
+  .skills > h4 {
+    font-size: 1.1rem;
+  }
+  .contents > h5 {
+    font-size: 1rem;
+  }
+
+  .contents > ul > li,
+  .contents > p {
+    font-size: 0.9rem;
+  }
+  .date {
+    display: none;
+  }
+}
