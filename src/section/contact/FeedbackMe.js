@@ -140,7 +140,10 @@ function FeedbackInputSection(props) {
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [confirmModalmessage, setConfirmModalmessage] = useState('');
 
-  const onClickOkBtn = () => {
+  const onClickOkBtn = (e) => {
+   
+    e.preventDefault(); 
+
     if (btnType === 'add') {
       setConfirmModalmessage('글을 등록하시겠습니까?');
     } else if (btnType === 'edit') {
@@ -189,62 +192,64 @@ function FeedbackInputSection(props) {
           onConfirm={onClickConfirmBtn}
         ></ConfirmModal>
       )}
-      <input
-        className="form-control"
-        type="text"
-        placeholder="Nickname"
-        value={nickname}
-        onChange={nicknameHandle}
-        style={{ ...inputStyle }}
-      ></input>
-      <textarea
-        className="form-control gap-2 "
-        rows="6"
-        style={inputStyle}
-        value={content}
-        onChange={contentHandle}
-      ></textarea>
-      <div id="pw-btn-item">
-        <span
-          style={{
-            width: '60%',
-            display: 'flex',
-            gap: '20px',
-            alignItems: 'center',
-          }}
-        >
-          <input
-            className="form-control "
-            type={showEyeIcon ? 'text' : 'password'}
-            placeholder="Password"
-            value={password}
-            onChange={passwordHandle}
-            style={{ ...inputStyle, width: '70%', height: inputHeight }}
-          ></input>
-          {showEyeIcon ? (
-            <IoEye size={30} id="eye-icon" onClick={clickEyeIcon} />
-          ) : (
-            <IoEyeOff size={30} id="eye-icon" onClick={clickEyeIcon} />
-          )}
-        </span>
+      <form className="row g-3" onSubmit={onClickOkBtn}>
+        <input
+          className="form-control"
+          type="text"
+          placeholder="Nickname"
+          value={nickname}
+          onChange={nicknameHandle}
+          style={{ ...inputStyle }}
+        ></input>
+        <textarea
+          className="form-control gap-2 "
+          rows="6"
+          style={inputStyle}
+          value={content}
+          onChange={contentHandle}
+        ></textarea>
+        <div id="pw-btn-item">
+          <span
+            style={{
+              width: '60%',
+              display: 'flex',
+              gap: '20px',
+              alignItems: 'center',
+            }}
+          >
+            <input
+              className="form-control "
+              type={showEyeIcon ? 'text' : 'password'}
+              placeholder="Password"
+              value={password}
+              onChange={passwordHandle}
+              style={{ ...inputStyle, width: '70%', height: inputHeight }}
+            ></input>
+            {showEyeIcon ? (
+              <IoEye size={30} id="eye-icon" onClick={clickEyeIcon} />
+            ) : (
+              <IoEyeOff size={30} id="eye-icon" onClick={clickEyeIcon} />
+            )}
+          </span>
 
-        <button
-          type="submit"
-          className="btn btn-light"
-          id="ok-btn"
-          style={{
-            height: inputHeight,
-            width: '20%',
-            alignItems: 'center',
-            padding: '0px',
-            margin: '0px',
-          }}
-          disabled={!isNotEmptyInputs}
-          onClick={onClickOkBtn}
-        >
-          OK
-        </button>
-      </div>
+          <button
+            type="submit"
+            className="btn btn-light"
+            id="ok-btn"
+            style={{
+              height: inputHeight,
+              width: '20%',
+              alignItems: 'center',
+              padding: '0px',
+              margin: '0px',
+            }}
+            disabled={!isNotEmptyInputs}
+            // onClick={onClickOkBtn}
+          >
+            OK
+          </button>
+        </div>
+      </form>
     </>
   );
 }

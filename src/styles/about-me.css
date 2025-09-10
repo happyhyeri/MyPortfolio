@@ -243,4 +243,7 @@
   .date {
     display: none;
   }
+  .about-container{
+   padding: 50px;
+  }
 }

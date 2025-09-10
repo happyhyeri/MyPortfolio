@@ -17,13 +17,23 @@ export default function ProjectPage() {
   return (
     <section id="project">
       <div className="project-container">
-        <div className="project-item0">
+        <div className="project-item1">
           <h1 className="project-title">PROJECT</h1>
           <h3 className="project-subtitle">Android - Coffee Order App</h3>
-        </div>
-        <div className="project-item1">
           <SlideImg></SlideImg>
+          <p
+            style={{
+              color: '#f5ecd5',
+              textAlign: 'start',
+              fontSize: '18px',
+              fontWeight: '500',
+            }}
+          >
+            {' '}
+            이미지 클릭 시 관련 링크를 보실 수 있습니다.
+          </p>
         </div>
+
         <div className="project-item2">
           <ProjectDetail></ProjectDetail>
         </div>
@@ -81,9 +91,9 @@ function PreviewSection() {
         id="preview-img-container"
         style={{ paddingBottom: '10px', lineHeight: '1.6' }}
       >
-        {previewImgs.map((item,index) => (
+        {previewImgs.map((item, index) => (
           <PrevieImgTitleSection
-            key = {index}
+            key={index}
             title={item.title}
             imgSrc={item.img}
           ></PrevieImgTitleSection>
@@ -115,7 +125,6 @@ function IssueSection() {
 
       <h4>🤔 만들면서 했던 고민</h4>
       <div style={{ paddingBottom: '10px', lineHeight: '1.6' }}>
-      
         <ul>
           <li className="higtlight-text">
             반복되는 UI 코드의 재사용 방법 (Composable 구조화 고민)
@@ -459,17 +468,7 @@ function SlideImg() {
         alt={`slide ${currentIdx}`}
         onClick={handleShow}
       />
-      <p
-        style={{
-          color: '#f5ecd5',
-          textAlign: 'start',
-          fontSize: '18px',
-          fontWeight: '500',
-        }}
-      >
-        {' '}
-        이미지 클릭 시 관련 링크를 보실 수 있습니다.
-      </p>
+
       <div className="modal">
         <Modal
           show={show}

@@ -68,19 +68,22 @@
 
 @media screen and (max-width: 767px) {
   .intro-text {
-    font-size: 1.6rem;
+    font-size: 1.0rem;
   }
 
   .intro-text-highlight {
-    font-size: 2rem;
+    font-size: 1.3rem;
   }
 
   #about-btn {
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     padding: 5px;
   }
   #about-btn:hover {
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     padding: 5px;
+  }
+  .intro-container{
+    padding:30px;
   }
 }
