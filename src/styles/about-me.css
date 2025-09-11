@@ -13,6 +13,7 @@
   align-items: center;
   padding-top: 140px;
   font-family: 'NanumSquareRoundBold';
+   word-break: keep-all;
 }
 
 .about-item1 {
@@ -24,6 +25,7 @@
     'image content';
   padding-bottom: 70px;
   width: 70%;
+
 }
 
 .about-text-highlight {

@@ -14,29 +14,84 @@ import { Modal, Button } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
 
 export default function ProjectPage() {
+ 
+     const onGithubLinkClick = () => {
+    window.open('https://github.com/happyhyeri/CoffeeVillage', '_blank');
+  };
+
+  const onUiPrototypeCilck = () => {
+    window.open(
+      'https://www.figma.com/proto/eYzdn3t6KCExvAD4NrIgfV/coffeeVillage?node-id=13-23&t=JIZM7PAL9YinZyJn-1',
+      '_blank'
+    );
+  };
+
+  const [show, setShow] = useState(false);
+  const handleClose = () => {
+    setShow(false);
+  };
+  const handleShow = () => {
+    console.log('보여줘어어');
+    setShow(true);
+  };
+
+ const logoClick =() =>{
+
+  if(window.innerWidth <= 900){
+    handleShow();
+  }  
+ }
+
+  
   return (
     <section id="project">
       <div className="project-container">
         <div className="project-item1">
-          <h1 className="project-title">PROJECT</h1>
-          <h3 className="project-subtitle">Android - Coffee Order App</h3>
-          <SlideImg></SlideImg>
-          <p
-            style={{
-              color: '#f5ecd5',
-              textAlign: 'start',
-              fontSize: '18px',
-              fontWeight: '500',
-            }}
-          >
+          <h1 className="project-title" onClick={logoClick}>PROJECT</h1>
+          <h3 className="project-subtitle" onClick={logoClick} >Android - Coffee Order App</h3>
+          <p className='link-direction-text logo-text' >
+            {' '}
+            위 타이틀 클릭시 관련 링크를 보실 수 있습니다.
+          </p>
+          <div className='project-img-container'>
+          <SlideImg onClickImg ={handleShow}></SlideImg>
+          <p className='link-direction-text'>
             {' '}
             이미지 클릭 시 관련 링크를 보실 수 있습니다.
           </p>
+          </div>
         </div>
 
         <div className="project-item2">
           <ProjectDetail></ProjectDetail>
         </div>
+      </div>
+       <div className="modal">
+        <Modal
+          show={show}
+          onHide={handleClose}
+          aria-labelledby="contained-modal-title-vcenter"
+          centered
+        >
+          <Modal.Header closeButton>
+            <Modal.Title id="contained-modal-title-vcenter">
+              프로젝트 관련 링크 주소
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <div className="modal-body">
+              <h5 className="link-text" onClick={onGithubLinkClick}>
+                {' '}
+                🔗 github 주소
+              </h5>
+
+              <h5 className="link-text" onClick={onUiPrototypeCilck}>
+                {' '}
+                🔗 UI 프로토타입 보러가기
+              </h5>
+            </div>
+          </Modal.Body>
+        </Modal>
       </div>
     </section>
   );
@@ -69,11 +124,11 @@ function PreviewSection() {
 
   return (
     <>
-      <p>
+      <h1>
         <span style={{ paddingBottom: '10px' }} className="highlight-title">
           👩🏻‍💻 미리보기
         </span>
-      </p>
+      </h1>
       <hr />
 
       <h4></h4>
@@ -116,15 +171,15 @@ function PrevieImgTitleSection(props) {
 function IssueSection() {
   return (
     <>
-      <p>
+      <h1>
         <span style={{ paddingBottom: '10px' }} className="highlight-title">
           💡 프로젝트를 진행하며
         </span>
-      </p>
-      <hr />
+      </h1>
+      <hr/>
 
-      <h4>🤔 만들면서 했던 고민</h4>
-      <div style={{ paddingBottom: '10px', lineHeight: '1.6' }}>
+      <h4 className='first-context'>🤔 만들면서 했던 고민</h4>
+      <div style={{ paddingBottom: '10px', lineHeight: '1.6' }} className='first-context'>
         <ul>
           <li className="higtlight-text">
             반복되는 UI 코드의 재사용 방법 (Composable 구조화 고민)
@@ -171,7 +226,7 @@ function IssueSection() {
           </ul>
         </ul>
       </div>
-      <h4>🤔 프로젝트 진행시 겪었던 어려움</h4>
+      <h4 >🤔 프로젝트 진행시 겪었던 어려움</h4>
       <div style={{ paddingBottom: '10px', lineHeight: '1.8' }}>
         <ul>
           <li className="higtlight-text">
@@ -198,14 +253,14 @@ function IssueSection() {
 function AboutSection() {
   return (
     <>
-      <p>
+      <h1>
         <span className="highlight-title" style={{ paddingBottom: '10px' }}>
           🗒️ ABOUT PROJECT
         </span>
-      </p>
+      </h1>
       <hr />
-      <h4>⭐ 앱 개요</h4>
-      <p style={{ paddingBottom: '10px' }}>
+      <h4 className='first-context'>⭐ 앱 개요</h4>
+      <p  className='first-context' style={{ paddingBottom: '10px'}}>
         사용자가 메뉴를 확인하고, 옵션을 선택해 장바구니에 담고 주문할 수 있는
         모바일 앱입니다. <br />
         Android Jetpack Compose를 기반으로 제작했습니다.
@@ -214,29 +269,29 @@ function AboutSection() {
       <h4>📆 프로젝트 기간</h4>
       <p style={{ paddingBottom: '10px' }}>2025년 7월 14 ~ 2025년 8월 5일</p>
       <h4>👩🏻‍💻 SKILLS & TOOLS</h4>
-      <ul>
+      <ul >
         <li>
-          <span className="higtlight-text">Language</span> : Kotlin
+          <span className="higtlight-text">Language</span> <br className='space' />: Kotlin
         </li>
         <li>
-          <span className="higtlight-text">Architecture</span> : MVVM (ViewModel
+          <span className="higtlight-text">Architecture</span>   <br className='space' /> : MVVM (ViewModel
           기반 상태관리 + Compose UI 렌더링)
         </li>
         <li>
-          <span className="higtlight-text">UI TOOLKIT</span> : Jetpack Compose
+          <span className="higtlight-text">UI TOOLKIT</span>  <br className='space' /> : Jetpack Compose
         </li>
         <li>
-          <span className="higtlight-text">Local DB</span> : Room
+          <span className="higtlight-text">Local DB</span>  <br className='space' /> : Room
         </li>
         <li>
-          <span className="higtlight-text">State Management</span> :
+          <span className="higtlight-text">State Management</span>  <br className='space' /> :
           MutableState , StateFlow
         </li>
         <li>
-          <span className="higtlight-text"> Design Tool </span>: Figma
+          <span className="higtlight-text"> Design Tool </span>  <br className='space' />: Figma
         </li>
         <li>
-          <span className="higtlight-text">Payment API </span>: Bootpay(Sandbox)
+          <span className="higtlight-text">Payment API </span>  <br className='space' />: Bootpay(Sandbox)
         </li>
       </ul>
       <h4>⭐ 구현 기능</h4>
@@ -403,15 +458,8 @@ function ImplementationFunctionTable() {
   );
 }
 
-function SlideImg() {
-  const [show, setShow] = useState(false);
-  const handleClose = () => {
-    setShow(false);
-  };
-  const handleShow = () => {
-    console.log('보여줘어어');
-    setShow(true);
-  };
+function SlideImg(props) {
+
   const slideImages = [
     {
       id: 0,
@@ -433,11 +481,7 @@ function SlideImg() {
 
   const [currentIdx, setCurrentIdx] = useState(0);
 
-  const preSlide = () => {
-    setCurrentIdx(
-      (preIdx) => (preIdx - 1 + slideImages.length) % slideImages.length
-    );
-  };
+
   const nextSlide = () => {
     setCurrentIdx((preIdx) => (preIdx + 1) % slideImages.length);
   };
@@ -450,52 +494,17 @@ function SlideImg() {
     return () => clearInterval(interval); // 클리어 필요
   }, [currentIdx]);
 
-  const onGithubLinkClick = () => {
-    window.open('https://github.com/happyhyeri/CoffeeVillage', '_blank');
-  };
 
-  const onUiPrototypeCilck = () => {
-    window.open(
-      'https://www.figma.com/proto/eYzdn3t6KCExvAD4NrIgfV/coffeeVillage?node-id=13-23&t=JIZM7PAL9YinZyJn-1',
-      '_blank'
-    );
-  };
   return (
     <>
       <img
         className="project-img"
         src={slideImages[currentIdx].img}
         alt={`slide ${currentIdx}`}
-        onClick={handleShow}
+        onClick={props.onClickImg}
       />
 
-      <div className="modal">
-        <Modal
-          show={show}
-          onHide={handleClose}
-          aria-labelledby="contained-modal-title-vcenter"
-          centered
-        >
-          <Modal.Header closeButton>
-            <Modal.Title id="contained-modal-title-vcenter">
-              프로젝트 관련 링크 주소
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <div className="modal-body">
-              <h5 className="link-text" onClick={onGithubLinkClick}>
-                {' '}
-                🔗 github 주소
-              </h5>
-
-              <h5 className="link-text" onClick={onUiPrototypeCilck}>
-                {' '}
-                🔗 UI 프로토타입 보러가기
-              </h5>
-            </div>
-          </Modal.Body>
-        </Modal>
-      </div>
+     
     </>
   );
 }
