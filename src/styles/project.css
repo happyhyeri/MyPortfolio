@@ -167,7 +167,7 @@
   display: none;
 }
 
-@media screen and (min-width: 1200px) and (max-width: 1550px) {
+@media (min-width: 1200px) and (max-width: 1550px) {
   /*project-item1*/
   .project-title {
     font-size: 2rem;
@@ -219,7 +219,7 @@
   }
 }
 
-@media screen and (min-width: 900px) and (max-width: 1200px) {
+@media (min-width: 900px) and (max-width: 1200px) {
   /*project-item1*/
   .project-title {
     font-size: 2rem;
@@ -278,7 +278,7 @@
   }
 }
 
-@media screen  and (min-width: 476px) and (max-width: 900px) {
+@media (min-width: 476px) and (max-width: 900px) {
   .project-container {
     flex-direction: column;
     padding: 40px;
@@ -361,7 +361,7 @@
 }
 
 
-@media screen and (max-width: 476px) {
+@media (max-width: 476px) {
 .project-container {
     flex-direction: column;
     padding: 40px;

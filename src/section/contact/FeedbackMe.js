@@ -13,7 +13,7 @@ import {
 } from '../../redux/store/feedbackSlice';
 import { setSelectedFeedbackItem } from '../../redux/store/selectedFeedbackItemSlice';
 
-export default function FeedbackSection() {
+export default function FeedbackSection(props) {
   const feedbacks = useSelector((state) => state.feedbacks);
   const dispatch = useDispatch();
   // const [feedbacks, setFeedbacks] = useState([]);
@@ -77,9 +77,8 @@ export default function FeedbackSection() {
         ></AlertModal>
       )}
       <div id="feedback-title">
-        <h1 style={{ fontSize: 45, fontWeight: 700, color: '#fff' }}>
-          Feedback Me
-        </h1>
+        <h1>Feedback Me</h1>
+        <div>copy → <span id='contact-email-text' onClick={props.copyEmail}>{props.hyeriEmail}</span> </div>
       </div>
       <div id="feedback-input">
         <FeedbackInputSection
@@ -107,18 +106,12 @@ function FeedbackInputSection(props) {
   const [btnType, setBtnType] = useState(null);
 
   const [showEyeIcon, setShowEyeIcon] = useState(false);
-  const inputStyle = {
-    fontSize: '20px',
-    color: '#212414',
-    padding: '15dpx',
-    fontWeight: '500',
-  };
 
   const clickEyeIcon = () => {
     setShowEyeIcon((prev) => !prev);
   };
 
-  const inputHeight = '50px';
+
 
   const [password, setPassword] = useState('');
   const passwordHandle = (e) => {
@@ -141,8 +134,7 @@ function FeedbackInputSection(props) {
   const [confirmModalmessage, setConfirmModalmessage] = useState('');
 
   const onClickOkBtn = (e) => {
-   
-    e.preventDefault(); 
+    e.preventDefault();
 
     if (btnType === 'add') {
       setConfirmModalmessage('글을 등록하시겠습니까?');
@@ -194,36 +186,26 @@ function FeedbackInputSection(props) {
       )}
       <form className="row g-3" onSubmit={onClickOkBtn}>
         <input
-          className="form-control"
+          className="form-control input-item"
           type="text"
           placeholder="Nickname"
           value={nickname}
           onChange={nicknameHandle}
-          style={{ ...inputStyle }}
         ></input>
         <textarea
-          className="form-control gap-2 "
+          className="form-control gap-2 input-item"
           rows="6"
-          style={inputStyle}
           value={content}
           onChange={contentHandle}
         ></textarea>
         <div id="pw-btn-item">
-          <span
-            style={{
-              width: '60%',
-              display: 'flex',
-              gap: '20px',
-              alignItems: 'center',
-            }}
-          >
+          <span>
             <input
-              className="form-control "
+              className="form-control  input-item input-item-password"
               type={showEyeIcon ? 'text' : 'password'}
               placeholder="Password"
               value={password}
               onChange={passwordHandle}
-              style={{ ...inputStyle, width: '70%', height: inputHeight }}
             ></input>
             {showEyeIcon ? (
               <IoEye size={30} id="eye-icon" onClick={clickEyeIcon} />
@@ -236,13 +218,6 @@ function FeedbackInputSection(props) {
             type="submit"
             className="btn btn-light"
             id="ok-btn"
-            style={{
-              height: inputHeight,
-              width: '20%',
-              alignItems: 'center',
-              padding: '0px',
-              margin: '0px',
-            }}
             disabled={!isNotEmptyInputs}
             // onClick={onClickOkBtn}
           >
@@ -289,17 +264,7 @@ function FeedbackCard(props) {
           margin: '10px 0',
         }}
       />
-      <p
-        style={{
-          textAlign: 'start',
-          paddingTop: '5px',
-          paddingLeft: '10px',
-          paddingRight: '10px',
-          whiteSpace: 'pre-wrap',
-        }}
-      >
-        {body}
-      </p>
+      <p id="card-body">{body}</p>
     </div>
   );
 }
@@ -372,18 +337,10 @@ function CardHeader(props) {
           alignItems: 'center',
         }}
       >
-        <div>
-          <span style={{ marginRight: '35px', fontSize: '20px' }}>
-            {nickname}
-          </span>
-          <span style={{ color: '#656b4f' }}> {date}</span>
-          {isEdit && (
-            <span
-              style={{ color: '#656b4f', fontSize: '14px', marginLeft: '10px' }}
-            >
-              [수정됨]
-            </span>
-          )}
+        <div style={{textAlign:'start'}}>
+          <span id="header-nickname">{nickname}</span><br  id='header-space'/>
+          <span id="header-date"> {date}</span>
+          {isEdit && <span id="header-edit-msg">[수정됨]</span>}
         </div>
         <div>
           <button
